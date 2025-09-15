@@ -44,6 +44,8 @@ class App
             $controller = new Controller\Root($this->db, []);
         } elseif (preg_match('@^/posts/?$@', $path) === 1) {
             $controller = new Controller\PostIndex($this->db, []);
+        } elseif (preg_match('@^/import/?$@', $path) === 1) {
+            $controller = new Controller\PostImporter($this->db, []);
         } elseif (preg_match('@^/posts/([a-f0-9-]+)/?$@', $path, $params) === 1) {
             array_shift($params);
             $controller = new Controller\PostDetails($this->db, $params);

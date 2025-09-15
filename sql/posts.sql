@@ -1,14 +1,14 @@
 begin;
 
 create table Posts (
-  id uuid not null,
+  id varchar(36) not null,
 
   title varchar(255) not null,
   body text not null,
   created_at timestamp not null,
   modified_at timestamp not null,
 
-  author uuid not null references authors(id) on delete cascade,
+  author varchar(36) not null references authors(id) on delete cascade,
 
   primary key (id)
 );
