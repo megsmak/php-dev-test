@@ -111,7 +111,7 @@ class Checkout extends Layout
                                 </div>
                             </div>
                         </div>
-                        <div class="form-field">
+                        <div class="form-field form-field--submit">
                             <input type="submit" value="Submit">
                         </div>
                     </div>
