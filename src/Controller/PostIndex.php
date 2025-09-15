@@ -30,5 +30,7 @@ class PostIndex extends Controller
     {
         // TODO: Load posts from database here.
         $this->posts = [];
+
+        
     }
 }

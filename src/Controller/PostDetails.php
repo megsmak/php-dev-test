@@ -2,6 +2,7 @@
 
 namespace silverorange\DevTest\Controller;
 
+use PDO;
 use silverorange\DevTest\Context;
 use silverorange\DevTest\Template;
 use silverorange\DevTest\Model;
@@ -49,9 +50,26 @@ class PostDetails extends Controller
         return $this->getProtocol() . ' 200 OK';
     }
 
+    public function setPost($post) : Model\Post
+    {
+        $result = new Model\Post();
+        $result->id = $post['id'];
+        $result->title = $post['title'];
+        $result->body = $post['body'];
+        $result->created_at = $post['created_at'];
+        $result->modified_at = $post['modified_at'];
+        $result->author = $post['author'];
+
+        return $result;
+    }
+
     protected function loadData(): void
     {
-        // TODO: Load post from database here. $this->params[0] is the post id.
-        $this->post = null;
+        print_r($this->post);
+        $sql = "SELECT * FROM posts WHERE `id` LIKE '" . $this->params[0] . "' LIMIT 1;";
+        $result = $this->db->query($sql);
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+        $this->post = $this->setPost($row);
+
     }
 }
