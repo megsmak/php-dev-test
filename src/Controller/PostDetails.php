@@ -27,7 +27,7 @@ class PostDetails extends Controller
         } else {
             $context->title = $this->post->title;
             $context->content = $this->params[0];
-            $context->body = $this->post->body;
+            $context->body = $this->renderPost($this->post->body);
             $context->created_at = $this->post->created_at;
             $context->modified_at = $this->post->modified_at;
             $context->author = $this->getAuthorName($this->post->author);
@@ -52,6 +52,15 @@ class PostDetails extends Controller
         }
 
         return $this->getProtocol() . ' 200 OK';
+    }
+
+    // Function to format Markdown into HTML and returns content in HTML. Unfortunately, I ran out of time to finish this last function, but I was planning to do pattern matches to replace all the tags in this function. At the moment, I just added code to convert the line breaks into paragraphs.
+    public function renderPost($body) : string
+    {
+
+        $content = nl2br($body);
+
+        return $content; 
     }
 
     public function setPost($post) : Model\Post

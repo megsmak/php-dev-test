@@ -28,6 +28,7 @@ class PostIndex extends Controller
         return new Template\PostIndex();
     }
 
+    // Function to render all the posts for Posts page in HTML
     public function getPosts($posts) : string 
     {
         $content = '';
