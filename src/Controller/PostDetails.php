@@ -27,6 +27,10 @@ class PostDetails extends Controller
         } else {
             $context->title = $this->post->title;
             $context->content = $this->params[0];
+            $context->body = $this->post->body;
+            $context->created_at = $this->post->created_at;
+            $context->modified_at = $this->post->modified_at;
+            $context->author = $this->getAuthorName($this->post->author);
         }
 
         return $context;
@@ -63,13 +67,19 @@ class PostDetails extends Controller
         return $result;
     }
 
+    public function getAuthorName($id) : string
+    {
+        $sql = "SELECT `full_name` FROM authors WHERE `id` LIKE '" . $id . "' LIMIT 1;";
+        $result = $this->db->query($sql);
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+        return $row['full_name'];
+    }
+
     protected function loadData(): void
     {
-        print_r($this->post);
         $sql = "SELECT * FROM posts WHERE `id` LIKE '" . $this->params[0] . "' LIMIT 1;";
         $result = $this->db->query($sql);
         $row = $result->fetch(PDO::FETCH_ASSOC);
         $this->post = $this->setPost($row);
-
     }
 }
