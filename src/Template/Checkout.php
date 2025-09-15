@@ -88,14 +88,15 @@ class Checkout extends Layout
                                 </div>
                             </div>
                             <div class="form-field form-field--required">
-                                <label class="form-field__label" for="billing_address_line1">Street Address: </label>
+                                <label class="form-field__label" for="billing_address_line1">Street Address:<br>
+                            <span class="form-field__sub-label">Line 1:</span> <span class="form-field__label-required"> (required)</span> </label>
                                 <div class="form-field__contents">
-                                    <input type="text" name="billing_address_line1" id="billing_address_line1" class="entry" placeholder="Line 1 (required)" size="17" maxlength="255" />
+                                    <input type="text" name="billing_address_line1" id="billing_address_line1" class="entry" size="17" maxlength="255" />
                                     </div>
                                 </div>
-                                <label class="form-field__label" for="billing_address_line2"></label>
+                                <label class="form-field__label" for="billing_address_line2"><span class="form-field__sub-label">Line 2:</span></label>
                                 <div class="form-field__contents">
-                                    <input type="text" name="billing_address_line2" id="billing_address_line2" class="entry" placeholder="Line 2 (optional)" size="17" maxlength="255" />
+                                    <input type="text" name="billing_address_line2" id="billing_address_line2" class="entry" size="17" maxlength="255" />
                                 </div>
                             </div>
                             <div class="form-field form-field--required">

@@ -73,6 +73,11 @@ main {
   color: #666;
 }
 
+.form-field__sub-label {
+  font-weight: normal;
+  padding: 0.5rem 0;
+}
+
 .form-field__label-required {
   font-size: 0.8rem;
   font-weight: normal;
