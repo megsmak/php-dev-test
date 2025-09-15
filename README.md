@@ -164,3 +164,8 @@ database.
 
 The DSN string in `src/Config.php` may need to be modified if you use a
 different database or do not use PostgreSQL with Docker Compose.
+
+## Developer Notes
+Please note that the Importer is located at:
+http://localhost:8000/import
+You can copy and paste the JSON information on that page, and use the password `silverorange`.
