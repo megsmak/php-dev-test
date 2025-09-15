@@ -35,9 +35,9 @@ class Checkout extends Layout
                                 </tbody>
                             </table>
                             <div class="frame__contents">
-                                <div class="form-field form-field--required">
+                                <div class="form-field form-field__rise-and-shine">
                                     <input type="checkbox" id="rise_and_shine_program" name="rise_and_shine_program" value="rise_and_shine">
-                                    <label for="verise_and_shine_programhicle1"> With our “Rise & Shine” beta program, you get early access to new features, but they may not always work perfectly. You can change your beta preference at any time after you join.</label>
+                                    <label for="rise_and_shine_program"> With our “Rise & Shine” beta program, you get early access to new features, but they may not always work perfectly. You can change your beta preference at any time after you join.</label>  
                                  </div>
                             </div>
                         </div>
@@ -111,7 +111,7 @@ class Checkout extends Layout
                                 </div>
                             </div>
                         </div>
-                        <div class="form-field form-field--submit">
+                        <div class="form-field form-field__submit">
                             <input type="submit" value="Submit">
                         </div>
                     </div>
